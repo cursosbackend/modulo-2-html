@@ -1,0 +1,32 @@
+
+
+
+/*  llamando a la etiqueta  */
+header {
+    text-align:center;
+    color: crimson;
+    font-size: small;
+}
+/*  llamando a la etiqueta  */
+nav p {
+    text-align: center;
+    display: inline  ;
+
+
+}
+/* esto es para llamar ids  */
+#perfil  {
+    background-color: black;
+    color: white;
+
+}
+/* esto es para llamar las clases */
+.agrupacion {
+    background-color: aqua;
+}
+
+
+.pipeline {
+    color: blueviolet;
+    font-size: small;
+}
