@@ -1,32 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=National+Park:wght@200..800&display=swap');
 
 
-
-/*  llamando a la etiqueta  */
-header {
-    text-align:center;
-    color: crimson;
-    font-size: small;
+/*reset de css a html*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-/*  llamando a la etiqueta  */
-nav p {
+
+
+html body {
+    height: 100%;
+}
+
+body {
+    font-family: "National Park", sans-serif;
+    font-size: 1.2em;
+    min-height: 100%;
+}
+
+.contenedor > * {
+    box-shadow: -1px 1px 0px rgba(0,0,0,0.75 );
     text-align: center;
-    display: inline  ;
-
-
+    padding: 50px;
+    border-radius: 8px;
 }
-/* esto es para llamar ids  */
-#perfil  {
-    background-color: black;
-    color: white;
 
-}
-/* esto es para llamar las clases */
-.agrupacion {
+
+.header {
+    grid-area: header;
     background-color: aqua;
 }
 
-
-.pipeline {
-    color: blueviolet;
-    font-size: small;
+.nav {
+    grid-area: nav;
+    background-color: coral;
 }
+.aside {
+    grid-area: aside;
+    background-color: red;
+}
+.article {
+    grid-area: article;
+    background-color: bisque;
+}
+.footer {
+    grid-area: footer;
+    background-color: gray;
+}
+
+.contenedor {
+     display: grid;
+     gap: 10px;
+     grid-template:
+        "header" 100px
+        "nav" 100px
+        "article" auto
+        "aside" 100px
+        "footer" 100px;
+
+}
+
+
+@media (min-width:600px){
+    .contenedor{
+        grid-template:
+        "header  header" 100px
+        "nav  nav" 100px
+        "aside article"   auto
+        "footer  footer" 100px;
+    }
+}
+
