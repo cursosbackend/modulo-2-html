@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=National+Park:wght@200..800&display=swap');
 
-
-/*reset de css a html*/
+/* RESET de CSS */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
 
 html body {
     height: 100%;
@@ -19,14 +17,15 @@ body {
     min-height: 100%;
 }
 
+/* Estilos generales para los elementos dentro de .contenedor */
 .contenedor > * {
-    box-shadow: -1px 1px 0px rgba(0,0,0,0.75 );
+    box-shadow: -1px 1px 0px rgba(0,0,0,0.75);
     text-align: center;
     padding: 50px;
     border-radius: 8px;
 }
 
-
+/* Definición de cada área */
 .header {
     grid-area: header;
     background-color: aqua;
@@ -36,39 +35,62 @@ body {
     grid-area: nav;
     background-color: coral;
 }
+
 .aside {
     grid-area: aside;
     background-color: red;
 }
+
 .article {
     grid-area: article;
     background-color: bisque;
 }
+
 .footer {
     grid-area: footer;
     background-color: gray;
 }
 
+/* Nuevo elemento adicional para la tercera columna */
+.extra {
+    grid-area: extra;
+    background-color: lightgreen; /* Elige el color que prefieras */
+}
+
+/* Layout para pantallas pequeñas (móviles): 1 columna */
 .contenedor {
-     display: grid;
-     gap: 10px;
-     grid-template:
+    display: grid;
+    gap: 10px;
+    grid-template:
         "header" 100px
         "nav" 100px
         "article" auto
         "aside" 100px
         "footer" 100px;
-
 }
 
-
-@media (min-width:600px){
-    .contenedor{
-        grid-template:
-        "header  header" 100px
-        "nav  nav" 100px
-        "aside article"   auto
-        "footer  footer" 100px;
+/* Layout para pantallas medianas (a partir de 600px): 2 columnas */
+@media (min-width: 600px) {
+    .contenedor {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 100px 100px auto 100px;
+        grid-template-areas:
+            "header header "
+            "nav nav"
+            "aside article"
+            "footer footer";
     }
 }
 
+/* Layout para pantallas grandes (a partir de 900px): 3 columnas */
+@media (min-width: 900px) {
+    .contenedor {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 100px 100px auto 100px;
+        grid-template-areas:
+            "header header header"
+            "nav nav  header"
+            "aside article extra"
+            "footer footer footer";
+    }
+}
