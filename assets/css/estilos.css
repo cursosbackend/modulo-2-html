@@ -1,96 +1,62 @@
-@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=National+Park:wght@200..800&display=swap');
 
-/* RESET de CSS */
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=National+Park:wght@200..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-
-html body {
+  }
+  
+  html, body {
     height: 100%;
-}
+  }
+
 
 body {
-    font-family: "National Park", sans-serif;
-    font-size: 1.2em;
-    min-height: 100%;
+    font-family: Raleway;
+    color: white;
+    background-color: black;
 }
 
-/* Estilos generales para los elementos dentro de .contenedor */
-.contenedor > * {
-    box-shadow: -1px 1px 0px rgba(0,0,0,0.75);
+header {
+  text-align: center;
+  padding-bottom: 20px;
+  
+}
+
+header img {
+  width: 100%;
+
+}
+
+.descripcion {
+  display: flex;
+  padding: 50px; 
+  text-align: left;
+}
+
+.descripcion img {
+  width: 600px;
+}
+ .descripcion p {
+   padding-top: 120px;
+ }
+
+
+ .caracteristicas {
+    background-color: #1E1A13;
     text-align: center;
-    padding: 50px;
-    border-radius: 8px;
-}
+    font-size: 20px;
+    padding-top: 50px;
+    padding-bottom: 100px;
+ }
 
-/* Definición de cada área */
-.header {
-    grid-area: header;
-    background-color: aqua;
-}
+ .contenedor-iconos {
+  display: flex;
+  padding-top: 100px;
+  justify-content: center;
+  gap: 100px;
 
-.nav {
-    grid-area: nav;
-    background-color: coral;
-}
+ }
 
-.aside {
-    grid-area: aside;
-    background-color: red;
-}
 
-.article {
-    grid-area: article;
-    background-color: bisque;
-}
-
-.footer {
-    grid-area: footer;
-    background-color: gray;
-}
-
-/* Nuevo elemento adicional para la tercera columna */
-.extra {
-    grid-area: extra;
-    background-color: lightgreen; /* Elige el color que prefieras */
-}
-
-/* Layout para pantallas pequeñas (móviles): 1 columna */
-.contenedor {
-    display: grid;
-    gap: 10px;
-    grid-template:
-        "header" 100px
-        "nav" 100px
-        "article" auto
-        "aside" 100px
-        "footer" 100px;
-}
-
-/* Layout para pantallas medianas (a partir de 600px): 2 columnas */
-@media (min-width: 600px) {
-    .contenedor {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 100px 100px auto 100px;
-        grid-template-areas:
-            "header header "
-            "nav nav"
-            "aside article"
-            "footer footer";
-    }
-}
-
-/* Layout para pantallas grandes (a partir de 900px): 3 columnas */
-@media (min-width: 900px) {
-    .contenedor {
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 100px 100px auto 100px;
-        grid-template-areas:
-            "header header header"
-            "nav nav  header"
-            "aside article extra"
-            "footer footer footer";
-    }
-}
